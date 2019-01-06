@@ -1,0 +1,38 @@
+.media-box{
+  position:fixed;
+  bottom:0;
+  left:10px;
+  .media{
+    display:none;
+  }
+  &:hover{
+    .media{
+      display:flex;
+      position:relative;
+      animation-name:slide-out;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function:ease-out;
+    }
+  }
+}
+
+@keyframes slide-out{
+  0%{
+    top:100px;
+}
+  100%{
+    top:0;
+  }
+}
+
+.show{
+  .media{
+    display:flex!important;
+    position:relative;
+    animation-name:slide-out;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-out;
+  }
+}

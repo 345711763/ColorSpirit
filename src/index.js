@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter,Route, Link} from "react-router-dom";
-import HomePage from "./Pages/Home";
-import 'bootstrap';
+import { BrowserRouter } from "react-router-dom";
+import Layout from "./Layout";
+import Main from "./sections/Main";
+import LeftPanel from "./sections/LeftPanel";
+import Nav from "./sections/Nav";
+import "bootstrap";
 import "./index.scss";
-
-const Index = () => <h2>Home</h2>;
-const About = () => <h2>About</h2>;
-const Users = () => <h2>Users</h2>;
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-          <Route path="/" component={HomePage}/>
+        <Layout left={<LeftPanel />} mid={<Main />} right={<Nav />} />
       </BrowserRouter>
     );
   }

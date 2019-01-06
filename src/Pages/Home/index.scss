@@ -1,12 +1,5 @@
-.container-fluid{
-  height:100vh;
+.bg-homePage{
   background:url("../../../assets/img/home-bg.png"),linear-gradient(rgba(247,247,247,0.3),rgba(35,181,211,0.8));
   background-repeat:no-repeat;
   background-size:contain;
-  &{
-
-  }
-}
-.nav-font{
-  font-family: 'Gochi Hand', cursive;
 }

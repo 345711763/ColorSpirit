@@ -1,5 +1,7 @@
 import React from "react";
-
-export default (props)=>{
-    return ()
+import NavBar from "../../components/navbar";
+export default ()=>{
+    return (
+        <NavBar/>
+    )
 }
