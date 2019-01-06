@@ -1,0 +1,27 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand'); /*font-family*/
+$backgroundColor: olive;
+html {
+  font-size: 1rem;
+  cursor:url("../assets/img/cursor.png"),auto;
+}
+a{
+  cursor:url("../assets/img/cursor.png"),auto;
+}
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+}
