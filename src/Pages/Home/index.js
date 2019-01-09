@@ -31,31 +31,37 @@ class HomePage extends React.Component {
         <div className="w-100" />
           {/* End of Logo*/}
         <div className="col">
-          <div className="row">
-            <div className="col">
-              <div class="shadow-reverse">
-                <img src={IMG_1} alt="IMG_1" className="img-fluid img-shadow" />
-              </div>
-            </div>
-            <div className="col">
-              <div className="row">
-                <div className="col-12 homePage-section-1">
-                  <p class="vertical-line">All work. All fun.</p>
-                </div>
-                <div className="col IMG3">
-                  <img src={IMG_3} alt="IMG3" className="img-fluid" />
-                </div>
-              </div>
-            </div>
+          <div className="row"> {/* container for both left and right*/}
+              <section id="HomePageLeftSection" className="col-6">
+                  <div className="row">
+                      <div clasName="col-12">
+                          <img src={IMG_1} alt="IMG_1" className="max-width-80 img-shadow homePage-img1" />
+                      </div>
+                      <div className="col-12 mt-5">
+                          <img src={IMG_4} alt="IMG_4" className="max-width-80 img-shadow homePage_img4"/>
+                      </div>
+                      <div className="col-12 mt-5 ">
+                          <img src={IMG_6} alt="IMG_6" className="max-width-80 img-shadow homePage_img6"/>
+                      </div>
+                  </div>
+              </section>
+              <section id="HomePageRightSection" className="col-6">
+                  <div className="row">
+                      <div className="col-12 homePage-section-1">
+                          <p class="vertical-line">All work. All fun.</p>
+                      </div>
+                      <div className="col-12 mt-5">
+                          <img src={IMG_3} alt="IMG3" className="max-width-80 img-shadow homePage_img3" />
+                      </div>
+                      <div className="col-12 mt-5 ">
+                          <img src={IMG_5} alt="IMG_5" className="max-width-80 img-shadow homePage_img5"/>
+                      </div>
+                      <div className="col-12 mt-5 ">
+                          <img src={IMG_7} alt="IMG_7" className="max-width-80 img-shadow homePage_img7"/>
+                      </div>
+                  </div>
+              </section>
           </div>
-        </div>
-          {/* End Of Section_1*/}
-        <div className="w-100" />
-        <div className="col bg-dark">
-          <div className="bg-danger homePage_img4"><img src={IMG_4} alt="IMG_4"/></div>
-          <div className="bg-success homePage_img5"><img src={IMG_5} alt="IMG_5"/></div>
-          <div className="bg-info homePage_img6"><img src={IMG_6} alt="IMG_6"/></div>
-          <div className="bg-secondary homePage_img7"><img src={IMG_7} alt="IMG_7"/></div>
         </div>
       </div>
     );

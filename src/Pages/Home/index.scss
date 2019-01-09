@@ -9,54 +9,40 @@
   font-weight:bold;
   margin-bottom:0.23rem;
 }
+.homePage_img1{
+  padding:9px;
+}
+.homePage-img3{
+  padding:9px;
+}
 .homePage_img4{
+    padding:9px;
 }
 
 .homePage_img5{
-  display:none;
+  padding:9px;
 }
 
 .homePage_img6{
-  display:none;
-
+  padding:9px;
 }
 
 .homePage_img7{
-  display:none;
+  padding:9px;
 }
-
+.homePage-section-1{
+  padding-top:6rem;
+}
 .img-shadow{
-  box-shadow:5px 5px 5px ghostwhite;
-}
-.shadow-reverse{
-  box-shadow:-5px -5px 5px ghostwhite;
+  box-shadow:0 0 20px;
 }
 .vertical-line::before{
   content:"";
   position:absolute;
   bottom:1rem;
-  top:-315px;
+  top: -6rem;
   width:1px;
   left:1px;
   background-color:black;
   opacity:0.5;
 }
-.IMG3{
-  margin-top:150px;
-}
-@media screen and (min-width:800px){
-  .homePage-section-1{
-    margin-top:6rem;
-  }
-}
-@media screen and (min-width:1000px){
-  .homePage-section-1{
-    margin-top:7rem;
-  }
-}
-@media screen and (min-width:1500px){
-  .homePage-section-1{
-    margin-top:8rem;
-  }
-}
-
