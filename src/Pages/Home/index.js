@@ -3,6 +3,10 @@ import "./index.scss";
 import BigLogo from "../../../assets/img/homePage_bigLogo.png";
 import IMG_1 from "../../../assets/img/homePage_img1.png";
 import IMG_3 from "../../../assets/img/homePage_img3.jpg";
+import IMG_4 from "../../../assets/img/homePage_img4.jpg";
+import IMG_5 from "../../../assets/img/homePage_img5.jpg";
+import IMG_6 from "../../../assets/img/homePage_img6.jpg";
+import IMG_7 from "../../../assets/img/homePage_img7.jpg";
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
@@ -25,6 +29,7 @@ class HomePage extends React.Component {
           </div>
         </div>
         <div className="w-100" />
+          {/* End of Logo*/}
         <div className="col">
           <div className="row">
             <div className="col">
@@ -44,12 +49,13 @@ class HomePage extends React.Component {
             </div>
           </div>
         </div>
+          {/* End Of Section_1*/}
         <div className="w-100" />
         <div className="col bg-dark">
-          <div className="bg-danger homePage_img4">IMG4</div>
-          <div className="bg-success homePage_img5">IMG5</div>
-          <div className="bg-info homePage_img6">IMG6</div>
-          <div className="bg-secondary homePage_img7">IMG7</div>
+          <div className="bg-danger homePage_img4"><img src={IMG_4} alt="IMG_4"/></div>
+          <div className="bg-success homePage_img5"><img src={IMG_5} alt="IMG_5"/></div>
+          <div className="bg-info homePage_img6"><img src={IMG_6} alt="IMG_6"/></div>
+          <div className="bg-secondary homePage_img7"><img src={IMG_7} alt="IMG_7"/></div>
         </div>
       </div>
     );
