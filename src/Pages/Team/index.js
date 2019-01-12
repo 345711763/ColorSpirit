@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "../../components/title";
+import Title from "../../components/Title/index";
 import Img_1 from "../../../assets/img/adults-analysis-brainstorming-1661004.jpg";
 import Img_2 from "../../../assets/img/adult-backlit-bottles-697244.jpg";
 import Img_3 from "../../../assets/img/collaboration-community-cooperation-872955.jpg";

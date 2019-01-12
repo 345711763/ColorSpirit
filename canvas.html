@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <script>
+        window.onload= function()
+        {
+                const canvas = document.getElementById("myCanvas");
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                const ctx = canvas.getContext("2d");
+                let mouseX = undefined;
+                let mouseY = undefined;
+                let isDrawing = false;
+                canvas.addEventListener("mousedown",(e)=>{
+                    mouseX = e.clientX - canvas.getBoundingClientRect().left;
+                    mouseY = e.clientY - canvas.getBoundingClientRect().top;
+                    ctx.moveTo(mouseX,mouseY);
+                    ctx.beginPath();
+                    isDrawing = true;
+                });
+                canvas.addEventListener("mousemove",(e)=>{
+                    if(isDrawing) {
+                        ctx.lineTo(e.clientX, e.clientY);
+                        ctx.stroke();
+                    }
+                })
+                canvas.addEventListener("mouseup",(e)=>{
+                    isDrawing = false;
+                })
+                // ctx.fillStyle = "#FF0000";
+                // ctx.fillRect(0, 0, 150, 75);
+                // ctx.beginPath();
+                // ctx.arc(100,50,45,0,Math.PI*2);
+                // ctx.strokeStyle="green";
+                // ctx.stroke();
+                // let grd = ctx.createLinearGradient(0,0,1,0);
+                // grd.addColorStop(0,"white");
+                // grd.addColorStop(1,"black");
+                // ctx.fillStyle = grd;
+                // ctx.fillRect(0,0,100,100);
+                // ctx.font = "30px Arial";
+                // ctx.textAlign = "center";
+                // ctx.strokeText("Hello Canvas",0,0);
+                // ctx.fillText("Hello Canvas",canvas.width/2,canvas.height/2);
+                // ctx.beginPath();
+                // ctx.moveTo(0,0);
+                // ctx.lineTo(200,0);
+                // ctx.lineTo(200,100);
+                // ctx.closePath();
+                // ctx.stroke();
+
+        }
+    </script>
+</head>
+<body>
+<canvas id="myCanvas" style="border:1px solid black"/>
+</body>
+</html>

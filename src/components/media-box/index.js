@@ -2,7 +2,6 @@ import React from "react";
 import "./index.scss";
 export default ()=>{
     const onClickHandler = ()=>{
-        console.log("clicked");
         document.getElementById("medias").classList.toggle("show");
         console.log(document.getElementById("medias").className);
     }

@@ -1,21 +1,67 @@
 import React from "react";
 import MediaQuery from "react-responsive";
-export default ({ left, mid, right }) => {
-  return (
-    <div className="container-fluid">
-      <MediaQuery query="(min-device-width: 768px)">
-        <div className="row no-gutters">
-          <div className="col-1">{left}</div>
-          <div className="col-10">{mid}</div>
-          <div className="col-1">{right}</div>
-        </div>
-      </MediaQuery>
-      <MediaQuery query="(max-device-width:767px)">
-        <div className="row no-gutters ">
-          <div className="col-2">{left}</div>
-          <div className="col-10">{mid}</div>
-        </div>
-      </MediaQuery>
-    </div>
-  );
-};
+import NavbarTop from "../components/NavbarTop";
+import MediaBox from "../components/Media-box";
+import DrawableCanvas from "../components/DrawableCanvas";
+import imagesLoaded from "../../util/imagesLoaded";
+class Layout extends React.Component{
+    constructor(props){
+        super(props);
+        this.myRef = React.createRef();
+        this.state ={
+            loading:true
+        }
+    }
+    renderCanvas(){
+        if(!this.state.loading){
+            return(
+                <DrawableCanvas width={this.myRef.current.getBoundingClientRect().width} height={this.myRef.current.getBoundingClientRect().height}/>
+            )
+        }else{
+            return null;
+        }
+    }
+    handleImageChange = () => {
+        let isLoaded = imagesLoaded(this.myRef.current);
+        if (isLoaded) {
+            this.setState({
+                loading: false
+            })
+        }
+    };
+
+    render(){
+        return (
+            <div ref={this.myRef}>
+                {this.renderCanvas()}
+                <MediaQuery query="(min-device-width: 768px)">
+                    <div className="container-fluid">
+                        <div className="row no-gutters">
+                            <div className="col-1">{React.cloneElement(this.props.left,{handleImageChange:this.handleImageChange})}</div>
+                            <div className="col-10">{React.cloneElement(this.props.mid,{handleImageChange:this.handleImageChange})}</div>
+                            <div className="col-1">{React.cloneElement(this.props.right,{handleImageChange:this.handleImageChange})}</div>
+                        </div>
+                    </div>
+                </MediaQuery>
+                <MediaQuery query="(max-device-width:767px)">
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col">
+                                <NavbarTop/>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className="container-fluid">
+                        <div className="row no-gutters ">
+                            <MediaBox/>
+                            <div className="col-12">{React.cloneElement(this.props.mid,{handleImageChange:this.handleImageChange})}</div>
+                        </div>
+                    </div>
+                </MediaQuery>
+
+            </div>
+        );
+    }
+}
+export default Layout;

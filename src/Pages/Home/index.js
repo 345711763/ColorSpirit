@@ -13,6 +13,7 @@ class HomePage extends React.Component {
     this.status = {};
   }
   render() {
+      ("rendering hompage");
     return (
       <div className="row">
         <div className="col homePage-title">
@@ -21,10 +22,10 @@ class HomePage extends React.Component {
           &Illustration design
         </div>
         <div className="w-100" />
-        <div className="col mb-5">
+        <div className="col ,mb-5">
           <div className="row justify-content-end">
             <div className="col-6">
-              <img src={BigLogo} alt="biglogo" className="img-fluid" />
+              <img src={BigLogo} alt="biglogo" className="img-fluid" onLoad={this.props.handleImageChange}/>
             </div>
           </div>
         </div>
@@ -34,14 +35,14 @@ class HomePage extends React.Component {
           <div className="row"> {/* container for both left and right*/}
               <section id="HomePageLeftSection" className="col-6">
                   <div className="row">
-                      <div clasName="col-12">
-                          <img src={IMG_1} alt="IMG_1" className="max-width-80 img-shadow homePage-img1" />
+                      <div className="col-12">
+                          <img src={IMG_1} alt="IMG_1" className="max-width-80 img-shadow homePage-img1" onLoad={this.props.handleImageChange} />
                       </div>
                       <div className="col-12 mt-5">
-                          <img src={IMG_4} alt="IMG_4" className="max-width-80 img-shadow homePage_img4"/>
+                          <img src={IMG_4} alt="IMG_4" className="max-width-80 img-shadow homePage_img4" onLoad={this.props.handleImageChange}/>
                       </div>
                       <div className="col-12 mt-5 ">
-                          <img src={IMG_6} alt="IMG_6" className="max-width-80 img-shadow homePage_img6"/>
+                          <img src={IMG_6} alt="IMG_6" className="max-width-80 img-shadow homePage_img6" onLoad={this.props.handleImageChange}/>
                       </div>
                   </div>
               </section>
@@ -51,13 +52,13 @@ class HomePage extends React.Component {
                           <p class="vertical-line">All work. All fun.</p>
                       </div>
                       <div className="col-12 mt-5">
-                          <img src={IMG_3} alt="IMG3" className="max-width-80 img-shadow homePage_img3" />
+                          <img src={IMG_3} alt="IMG3" className="max-width-80 img-shadow homePage_img3" onLoad={this.props.handleImageChange} />
                       </div>
                       <div className="col-12 mt-5 ">
-                          <img src={IMG_5} alt="IMG_5" className="max-width-80 img-shadow homePage_img5"/>
+                          <img src={IMG_5} alt="IMG_5" className="max-width-80 img-shadow homePage_img5" onLoad={this.props.handleImageChange}/>
                       </div>
                       <div className="col-12 mt-5 ">
-                          <img src={IMG_7} alt="IMG_7" className="max-width-80 img-shadow homePage_img7"/>
+                          <img src={IMG_7} alt="IMG_7" className="max-width-80 img-shadow homePage_img7" onLoad={this.props.handleImageChange}/>
                       </div>
                   </div>
               </section>
