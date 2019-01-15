@@ -1,7 +1,7 @@
 import React from "react";
 import ContactImg from "../../../assets/img/contact-img.jpg";
 import "./index.scss";
-export default () => {
+export default (props) => {
   return (
     <div className="row height-100">
       <div className="col-6 align-self-center text-center">
@@ -31,6 +31,7 @@ export default () => {
           src={ContactImg}
           alt="contact"
           className="contact-img align-self-center "
+          onLoad={props.handleImageChange}
         />
       </div>
       <div className="modal fade" id="map" tabindex="-1" role="dialog">

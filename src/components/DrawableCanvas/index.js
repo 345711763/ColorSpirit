@@ -1,6 +1,5 @@
 import React from "react";
 import "./index.scss";
-import {withRouter} from "history";
 class DrawableCanvas extends React.Component {
   constructor(props) {
     super(props);
@@ -11,23 +10,25 @@ class DrawableCanvas extends React.Component {
   mouseX= undefined;
   mouseY= undefined;
   componentDidMount() {
-    ("Canvas Did mount");
-  }
-  componentDidUpdate(){
-    ("Canvas updated");
       this.canvas = this.refs.canvas;
       this.ctx = this.canvas.getContext("2d");
-      ("ctx gained");
+    console.log("Canvas Did mount");
+  }
+  componentDidUpdate(){
+      console.log("Canvas updated");
+      this.canvas = this.refs.canvas;
+      this.ctx = this.canvas.getContext("2d");
+      console.log("ctx gained");
 }
   mouseDownHandler = (e)=> {
-      ("mousedown");
+      console.log("mousedown");
     this.mouseX = e.clientX+window.scrollX;
     this.mouseY = e.clientY+window.scrollY;
     this.isDrawing = true;
     this.ctx.moveTo(this.mouseX, this.mouseY);
   }
   mouseMoveHandler=(e)=> {
-      ("mousemove");
+      console.log("mousemove");
     if (this.isDrawing) {
       this.ctx.lineTo(e.clientX+window.scrollX, e.clientY+window.scrollY);
       this.ctx.stroke();
