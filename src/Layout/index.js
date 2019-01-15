@@ -4,12 +4,32 @@ import NavbarTop from "../components/NavbarTop";
 import MediaBox from "../components/Media-box";
 import DrawableCanvas from "../components/DrawableCanvas";
 import imagesLoaded from "../../util/imagesLoaded";
+import {withRouter} from "react-router-dom";
 class Layout extends React.Component{
     constructor(props){
         super(props);
         this.myRef = React.createRef();
         this.state ={
             loading:true
+        }
+    }
+    componentWillMount(){
+        this.unlisten = this.props.history.listen((location,action)=>{
+            console.log("on route change");
+            this.setState(this.state);
+        });
+        if(this.state.loading===false){
+            this.setState.loading = true;
+        }
+    }
+    componentWillUnMount(){
+        this.unlisten();
+    }
+    componentWillUpdate(){
+        if(this.state.loading===false){
+            this.setState({
+                loading:true
+            });
         }
     }
     renderCanvas(){
@@ -22,8 +42,10 @@ class Layout extends React.Component{
         }
     }
     handleImageChange = () => {
+        console.log("One Image Loaded");
         let isLoaded = imagesLoaded(this.myRef.current);
-        if (isLoaded) {
+        if (isLoaded && this.state.loading ===true) {
+            console.log("all imgs is Loaded is true");
             this.setState({
                 loading: false
             })
@@ -31,13 +53,14 @@ class Layout extends React.Component{
     };
 
     render(){
+        console.log(`layout rendering loading is ${this.state.loading}`);
         return (
             <div ref={this.myRef}>
                 {this.renderCanvas()}
                 <MediaQuery query="(min-device-width: 768px)">
                     <div className="container-fluid">
                         <div className="row no-gutters">
-                            <div className="col-1">{React.cloneElement(this.props.left,{handleImageChange:this.handleImageChange})}</div>
+                                <div className="col-1">{React.cloneElement(this.props.left,{handleImageChange:this.handleImageChange})}</div>
                             <div className="col-10">{React.cloneElement(this.props.mid,{handleImageChange:this.handleImageChange})}</div>
                             <div className="col-1">{React.cloneElement(this.props.right,{handleImageChange:this.handleImageChange})}</div>
                         </div>
@@ -64,4 +87,4 @@ class Layout extends React.Component{
         );
     }
 }
-export default Layout;
+export default withRouter(Layout);

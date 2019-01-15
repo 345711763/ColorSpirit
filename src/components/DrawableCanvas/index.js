@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.scss";
+import {withRouter} from "history";
 class DrawableCanvas extends React.Component {
   constructor(props) {
     super(props);

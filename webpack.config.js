@@ -1,6 +1,18 @@
+const webpack =require("webpack");
 const path = require("path");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const dotenv = require('dotenv');
+
+// call dotenv and it will return an Object with a parsed key
+const env = dotenv.config().parsed;
+
+// reduce it to a nice object, the same as before
+const envKeys = Object.keys(env).reduce((prev, next) => {
+    prev[`process.env.${next}`] = JSON.stringify(env[next]);
+    return prev;
+}, {});
+
 const option = {
   entry: {
     abc: "./src/index.js"
@@ -63,7 +75,8 @@ const option = {
       /*讓webpack動態生成一個index.html文件并把bundle文件引入*/
       title: "Output Management" /*自動生成的html文件的title*/,
       template: "./src/index.html"
-    })
+    }),
+      new webpack.DefinePlugin(envKeys)
   ]
 };
 

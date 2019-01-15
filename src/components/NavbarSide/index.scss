@@ -7,3 +7,7 @@
     font-size:0.7rem;
   }
 }
+.onTopCanvas{
+  position:relative; // to make z-index working position can't be static
+  z-index:1001;
+}

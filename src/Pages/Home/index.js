@@ -13,7 +13,7 @@ class HomePage extends React.Component {
     this.status = {};
   }
   render() {
-      ("rendering hompage");
+      console.log(this.props);
     return (
       <div className="row">
         <div className="col homePage-title">
