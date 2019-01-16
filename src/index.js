@@ -7,7 +7,6 @@ import LeftPanel from "./sections/LeftPanel";
 import Nav from "./sections/Nav";
 import "bootstrap";
 import "./index.scss";
-import Firebase from './components/Firebase';
 class App extends React.Component {
   constructor(props) {
     super(props);
